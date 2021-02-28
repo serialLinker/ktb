@@ -25,16 +25,16 @@ jobs:
           - os: windows-latest
             gu-binary: gu
 
-     steps:
-      - name: Setup Graalvm
-        id: setup-graalvm
-        uses: DeLaGuardo/setup-graalvm@master
-        with:
-          graalvm-version: '21.0.0.java11'
+    steps:
+    - name: Setup Graalvm
+      id: setup-graalvm
+      uses: DeLaGuardo/setup-graalvm@master
+      with:
+        graalvm-version: '21.0.0.java11'
 
-      - name: Install native-image component
-        run: |
-          ${{ matrix.gu-binary }} install native-image
+    - name: Install native-image component
+      run: |
+        ${{ matrix.gu-binary }} install native-image
     - run: java -version
     - name: Analyze with SonarCloud
       run: mvn -B verify sonar:sonar -Dsonar.projectKey=serialLinker_muay-thai -Dsonar.organization=seriallinker -Dsonar.host.url=https://sonarcloud.io --file api/pom.xml
