@@ -15,11 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup GraalVM environment
-      uses: DeLaGuardo/setup-graalvm@2.0
+    - uses: actions/checkout@latest
+    - uses: DeLaGuardo/setup-graalvm@master
       with:
-        graalvm-version: '20.2.0.java11'
+        graalvm-version: '20.0.0.java11'
     - run: java -version
     - name: Analyze with SonarCloud
       run: mvn -B verify sonar:sonar -Dsonar.projectKey=serialLinker_muay-thai -Dsonar.organization=seriallinker -Dsonar.host.url=https://sonarcloud.io --file api/pom.xml
