@@ -26,4 +26,13 @@ public class User extends PanacheEntity {
         user.role = role;
         user.persist();
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
 }

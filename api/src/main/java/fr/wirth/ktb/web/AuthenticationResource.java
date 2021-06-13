@@ -23,14 +23,8 @@ public class AuthenticationResource {
     @POST
     @PermitAll
     public TokenDTO hello(LoginDTO loginDTO) {
-        System.out.println(loginDTO.getEmail());
-        if(loginDTO.getEmail().equals("admin@admin.fr")) {
-            var res = new TokenDTO();
-            res.setToken(generateToken.getToken(loginDTO.getEmail()));
-            return res;
-        }
-
-        throw new RuntimeException();
-
+        var res = new TokenDTO();
+        res.setToken(generateToken.getToken(loginDTO.getEmail(), loginDTO.getPassword()));
+        return res;
     }
 }
