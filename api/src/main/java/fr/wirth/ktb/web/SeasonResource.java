@@ -1,4 +1,4 @@
-package fr.wirth.ktb;
+package fr.wirth.ktb.web;
 
 import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;

@@ -1,4 +1,4 @@
-package fr.wirth.ktb;
+package fr.wirth.ktb.hook;
 
 import fr.wirth.ktb.domain.User;
 import io.quarkus.runtime.StartupEvent;
